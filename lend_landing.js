@@ -3,6 +3,10 @@ if (Meteor.isClient) {
     return "Welcome to lend_landing.";
   };
 
+  Template.hello.customers = function () {
+    return Customers.find().fetch();
+  };
+
   Template.hello.events({
     'click input': function () {
       // template data, if any, is available in 'this'
